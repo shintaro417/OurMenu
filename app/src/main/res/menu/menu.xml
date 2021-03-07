@@ -9,37 +9,75 @@
         app:showAsAction="ifRoom" />
     <item android:title="@string/curry_text" >
         <menu >
-            <item android:title="@string/greencurry_text" />
-            <item android:title="@string/tamoricurry_text" />
-            <item android:title="@string/beefcurry_text" />
-            <item android:title="@string/katsucurry_text" />
+            <item
+                android:id="@+id/greencurry"
+                android:title="@string/greencurry_text" />
+            <item
+                android:id="@+id/tamoricurry"
+                android:title="@string/tamoricurry_text" />
+            <item
+                android:id="@+id/beefcurry"
+                android:title="@string/beefcurry_text" />
+            <item
+                android:id="@+id/katsucurry"
+                android:title="@string/katsucurry_text" />
         </menu>
     </item>
     <item android:title="@string/noodle_text" >
         <menu >
-            <item android:title="@string/udon_text" />
-            <item android:title="@string/nabeyaki_text" />
-            <item android:title="@string/ramen2_text" />
-            <item android:title="@string/soba2_text" />
-            <item android:title="@string/soba1_text" />
-            <item android:title="@string/ramen1_text" />
-            <item android:title="@string/hiyashi_text" />
+            <item
+                android:id="@+id/udon"
+                android:title="@string/udon_text" />
+            <item
+                android:id="@+id/nabeyaki"
+                android:title="@string/nabeyaki_text" />
+            <item
+                android:id="@+id/ramen2"
+                android:title="@string/ramen2_text" />
+            <item
+                android:id="@+id/soba2"
+                android:title="@string/soba2_text" />
+            <item
+                android:id="@+id/soba1"
+                android:title="@string/soba1_text" />
+            <item
+                android:id="@+id/ramen1"
+                android:title="@string/ramen1_text" />
+            <item
+                android:id="@+id/hiyashi"
+                android:title="@string/hiyashi_text" />
         </menu>
     </item>
     <item android:title="@string/stew_text" >
         <menu >
-            <item android:title="@string/osyarenabe_text" />
-            <item android:title="@string/oden_text" />
+            <item
+                android:id="@+id/osyarenabe"
+                android:title="@string/osyarenabe_text" />
+            <item
+                android:id="@+id/oden"
+                android:title="@string/oden_text" />
         </menu>
     </item>
     <item android:title="@string/etc_text" >
         <menu >
-            <item android:title="@string/baigai_text" />
-            <item android:title="@string/ankake_text" />
-            <item android:title="@string/hayashi_text" />
-            <item android:title="@string/hiroshima_text" />
-            <item android:title="@string/peperoncino_text" />
-            <item android:title="@string/beefobowl_text" />
+            <item
+                android:id="@+id/baigai"
+                android:title="@string/baigai_text" />
+            <item
+                android:id="@+id/ankake"
+                android:title="@string/ankake_text" />
+            <item
+                android:id="@+id/hayashi"
+                android:title="@string/hayashi_text" />
+            <item
+                android:id="@+id/hiroshima"
+                android:title="@string/hiroshima_text" />
+            <item
+                android:id="@+id/peperoncino"
+                android:title="@string/peperoncino_text" />
+            <item
+                android:id="@+id/beefbowl"
+                android:title="@string/beefobowl_text" />
         </menu>
     </item>
 </menu>
