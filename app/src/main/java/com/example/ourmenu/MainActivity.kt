@@ -2,8 +2,10 @@ package com.example.ourmenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.example.ourmenu.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,13 +14,36 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //menuImageを長押ししたら、onCreateContextMenu()メソッドが呼び出されるようにする
+        registerForContextMenu(binding.menuImage)
     }
 
+    /**
+     * メニュー表示
+     * @param menu ContextMenu
+     * @param v 長押しされたビュー
+     * @param menuInfo コンテキスメニューの作成に関する追加情報
+     */
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        //menuTextのtextプロパティにメニュー名がセットされている時だけinflate()メソッどぉ実行する
+        if(binding.menuText.text.isNotEmpty()){
+            //作成したコンテキストメニューのIDと追加先のmenuを指定
+            menuInflater.inflate(R.menu.context,menu)
+        }
+    }
+
+    /**
+     * メニューを表示するためのメソッド
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean{
         menuInflater.inflate(R.menu.menu,menu)
         return true
     }
 
+    /**
+     * メニューが選択されたときの処理
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.home -> {
