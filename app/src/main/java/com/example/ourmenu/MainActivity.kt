@@ -14,7 +14,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean{
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.home -> {
                 binding.menuImage.setImageResource(R.drawable.okasan)
@@ -53,7 +58,69 @@ class MainActivity : AppCompatActivity() {
             R.id.ramen1 -> {
                 binding.menuImage.setImageResource(R.drawable.ramen1)
                 binding.menuText.text = getString(R.string.ramen1_text)
+                return true
+            }
+            R.id.ramen2 -> {
+                binding.menuImage.setImageResource(R.drawable.ramen2)
+                binding.menuText.text = getString(R.string.ramen2_text)
+                return true
+            }
+            R.id.nabeyaki -> {
+                binding.menuImage.setImageResource(R.drawable.nabeyaki)
+                binding.menuText.text = getString(R.string.nabeyaki_text)
+                return true
+            }
+            R.id.udon -> {
+                binding.menuImage.setImageResource(R.drawable.udon)
+                binding.menuText.text = getString(R.string.udon_text)
+                return true
+            }
+            R.id.hiyashi -> {
+                binding.menuImage.setImageResource(R.drawable.hiyashi)
+                binding.menuText.text = getString(R.string.hiyashi_text)
+                return true
+            }
+            R.id.oden -> {
+                binding.menuImage.setImageResource(R.drawable.oden)
+                binding.menuText.text = getString(R.string.oden_text)
+                return true
+            }
+            R.id.osyarenabe -> {
+                binding.menuImage.setImageResource(R.drawable.osyarenabe)
+                binding.menuText.text = getString(R.string.osyarenabe_text)
+                return true
+            }
+            R.id.beefbowl -> {
+                binding.menuImage.setImageResource(R.drawable.beefbowl)
+                binding.menuText.text = getString(R.string.beefobowl_text)
+                return true
+            }
+            R.id.peperoncino -> {
+                binding.menuImage.setImageResource(R.drawable.peperoncino)
+                binding.menuText.text = getString(R.string.peperoncino_text)
+                return true
+            }
+            R.id.hiroshima -> {
+                binding.menuImage.setImageResource(R.drawable.hiroshima)
+                binding.menuText.text = getString(R.string.hiroshima_text)
+                return true
+            }
+            R.id.hayashi -> {
+                binding.menuImage.setImageResource(R.drawable.hayashi)
+                binding.menuText.text = getString(R.string.hayashi_text)
+                return true
+            }
+            R.id.ankake -> {
+                binding.menuImage.setImageResource(R.drawable.ankake)
+                binding.menuText.text = getString(R.string.ankake_text)
+                return true
+            }
+            R.id.baigai -> {
+                binding.menuImage.setImageResource(R.drawable.baigai)
+                binding.menuText.text = getString(R.string.baigai_text)
+                return true
             }
         }
+        return super.onOptionsItemSelected(item)
     }
 }
