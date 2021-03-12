@@ -1,5 +1,7 @@
 package com.example.ourmenu
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -147,5 +149,48 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    /**
+     * コンテキストメニューが選択されたときの処理を書く
+     * メールする、SMSするの処理
+     */
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            //メールを選択するときの処理
+            R.id.mail -> {
+                //件名
+                val subject = getString(R.string.app_name)
+                //テキスト
+                val text = "${binding.menuText.text}が食べたい"
+                //uriの取得 scheme,ssp
+                val uri = Uri.fromParts("mailto","kanehiro@gmail.com",null)
+                //ACTION_SENDTO:メールを送信する。
+                val intent = Intent(Intent.ACTION_SENDTO,uri)
+                //subject:メール件名としてメールアプリに渡す。
+                intent.putExtra(Intent.EXTRA_SUBJECT,subject)
+                intent.putExtra(Intent.EXTRA_TEXT,text)
+                //resolveActivityメソッド：インテントを処理できるアプリが存在するか否かを確認する。
+                if(intent.resolveActivity(packageManager) != null){
+                    //intentのアクションを実行する。
+                    startActivity(intent)
+                }
+                return true
+            }
+            //SMSを選択
+            R.id.sms -> {
+                val text = "${binding.menuText.text}が食べたい"
+                val uri = Uri.fromParts("smsto","999999999",null)
+                val intent = Intent(Intent.ACTION_SENDTO,uri)
+                intent.putExtra("sms_body",text)
+                if(intent.resolveActivity(packageManager) != null){
+                    startActivity(intent)
+                }
+                return true
+            }
+
+
+        }
+        return super.onContextItemSelected(item)
     }
 }
